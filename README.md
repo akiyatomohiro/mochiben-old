@@ -47,3 +47,7 @@ docker-compose exec front yarn dev
 `localhost:3000`にアクセスすると Next.js のウェルカムページが表示される
 
 開発用サーバーの停止は`control + c`
+
+# Laravel で React フレームワークの Next.js 使う方法
+
+https://www.webopixel.net/php/1724.html
