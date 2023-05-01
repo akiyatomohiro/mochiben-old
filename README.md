@@ -51,3 +51,45 @@ docker-compose exec front yarn dev
 # Laravel で React フレームワークの Next.js 使う方法
 
 https://www.webopixel.net/php/1724.html
+
+# DB接続
+
+dc exec db bash
+
+mysql -u root -ppassword
+
+# migration
+
+https://www.ritolab.com/posts/25
+
+https://qiita.com/mdrq/items/f10e488caa4497eec79b
+
+# 新規作成
+dc exec api php artisan make:migration create_users_table --create=users
+
+# 編集（編集内容がわかりやすいファイル名にすると◎）
+
+dc exec api php artisan make:migration modify_users_table --table=users
+
+# マイグレーション実行
+
+dc exec api php artisan migrate
+
+# ロールバック
+
+一番最後に実行したマイグレーションが無かったことになる
+
+php artisan migrate:rollback
+
+マイグレーションを３世代前にロールバックする
+
+php artisan migrate:rollback --step=3
+
+全てのマイグレーションをロールバックする
+
+php artisan migrate:reset
+
+全てのマイグレーションをロールバックし、再度マイグレーションを実行する
+
+php artisan migrate:refresh
+
